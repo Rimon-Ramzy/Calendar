@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #9B59B6;
+}
+.wrapper {
+  width: 450px;
+  background-color: #FFF;
+  border-radius: 15px;
+}
+.wrapper header {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 30px 10px;
+  align-items: center;
+}
+header .current-date {
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+header .icons i {
+  height: 38px;
+  width: 38px;
+  line-height: 38px;
+  color: #878787;
+  font-size: 1.2rem;
+  margin: 0 1px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+header .icons i:hover {
+  background-color: #F2F2F2;
+}
+header .icons i:last-child {
+  margin-inline-end: -10px;
+}
+.calender {
+  padding: 20px;
+}
+.calender ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  text-align: center;
+}
+.calender ul li {
+  width: calc(100% / 7);
+}
+.calender .days li {
+  position: relative;
+  margin-top: 30px;
+  cursor: pointer;
+  z-index: 1;
+}
+.days li.inactive {
+  color: #aaa;
+}
+.days li.active {
+  color: #FFF;
+}
+.days li.active::before {
+  background-color: #9B59B6;
+}
+.calender .days li::before {
+  content: '';
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+.calender .days li:hover::before {
+  background-color: #F2F2F2;
+}
+.calender .days {
+  margin-bottom: 20px;
+}
+
+.calender .weeks {
+  font-weight: 500;
+}
+
+@media (max-width: 500px) {
+  .wrapper {
+    width: 350px;
+  }
+  header .current-date {
+  font-size: 1rem;
+  }
+  header .icons i {
+    font-size: 0.9rem;
+  }
+  .calender .weeks {
+    font-size: 0.8rem;
+  }
+  .calender .days {
+    font-size: 0.8rem;
+  }
+  .calender .days li {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 400px) {
+  .wrapper {
+    width: 200px;
+  }
+  header .current-date {
+  font-size: 0.8rem;
+  }
+  header .icons i {
+    font-size: 0.7rem;
+    height: 24px;
+    width: 24px;
+    line-height: 24px;
+  }
+  .calender .days li::before {
+    height: 25px;
+    width: 25px;
+  }
+  .calender .weeks {
+    font-size: 0.6rem;
+  }
+  .calender .days {
+    font-size: 0.6rem;
+  }
+  .calender .days li {
+    margin-top: 20px;
+  }
+  .calender {
+    padding: 10px;
+  }
+  .wrapper header {
+    padding: 15px 20px 5px;
+  }
+}
